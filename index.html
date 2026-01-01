@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Piket Kelas X-TK 3</title>
+    <title>Jadwal Piket Kelas X TK 3</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
@@ -61,10 +61,9 @@
             max-width: 500px;
         }
 
-        /* --- KARTU KEMBALI KE SEMULA (KOTAK STANDAR) --- */
         .card {
             border-radius: 15px;
-            padding: 20px 10px;
+            padding: 20px 8px 15px 8px;
             text-align: center;
             box-shadow: 0px 4px 0px rgba(0,0,0,0.15);
             position: relative;
@@ -72,19 +71,10 @@
             border: 2px solid transparent;
         }
 
-        /* Grup 1: Senin, Kamis, Jumat */
-        .senin, .kamis, .jumat {
-            background-color: #efebe9;
-            color: #4a3f35;
-        }
+        /* Skema Warna Tetap Sama */
+        .senin, .kamis, .jumat { background-color: #efebe9; color: #4a3f35; }
+        .selasa, .rabu, .sabtu { background-color: #4a3f35; color: #efebe9; }
 
-        /* Grup 2: Selasa, Rabu, Sabtu */
-        .selasa, .rabu, .sabtu {
-            background-color: #4a3f35;
-            color: #efebe9;
-        }
-
-        /* --- STYLE STEMPEL HARI INI --- */
         .stempel-hari-ini {
             display: none;
             position: absolute;
@@ -101,10 +91,7 @@
             z-index: 10;
         }
 
-        .hari-ini .stempel-hari-ini { 
-            display: block; 
-            animation: stamp 0.3s ease-in-out;
-        }
+        .hari-ini .stempel-hari-ini { display: block; animation: stamp 0.3s ease-in-out; }
 
         @keyframes stamp {
             0% { transform: scale(3) rotate(30deg); opacity: 0; }
@@ -117,20 +104,24 @@
             box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
         }
 
-        .day-title { font-weight: bold; margin-bottom: 10px; display: block; font-size: 16px; }
+        .day-title { font-weight: bold; margin-bottom: 10px; display: block; font-size: 14px; letter-spacing: 1px; }
 
+        /* Slot Nama (7 slot per hari) */
         .name-slot {
             background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            margin: 6px 0;
-            padding: 8px;
-            font-size: 13px;
+            border-radius: 10px;
+            margin: 4px 0;
+            padding: 6px;
+            font-size: 11px;
             border: 1px solid rgba(0,0,0,0.05);
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .footer-link {
-            margin-top: 30px;
+            margin: 30px 0;
             background-color: #efebe9;
             border: 3px solid #4a3f35;
             padding: 12px 40px;
@@ -154,16 +145,76 @@
     </div>
 
     <div class="grid-container">
-        <div id="day-1" class="card senin"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">SENIN</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
-        <div id="day-2" class="card selasa"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">SELASA</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
-        <div id="day-3" class="card rabu"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">RABU</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
-        <div id="day-4" class="card kamis"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">KAMIS</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
-        <div id="day-5" class="card jumat"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">JUMAT</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
-        <div id="day-6" class="card sabtu"><span class="stempel-hari-ini">HARI INI</span><span class="day-title">SABTU</span><div class="name-slot">Nama Siswa</div><div class="name-slot">Nama Siswa</div></div>
+        <div id="day-1" class="card senin">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">SENIN</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
+        <div id="day-2" class="card selasa">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">SELASA</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
+        <div id="day-3" class="card rabu">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">RABU</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
+        <div id="day-4" class="card kamis">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">KAMIS</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
+        <div id="day-5" class="card jumat">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">JUMAT</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
+        <div id="day-6" class="card sabtu">
+            <span class="stempel-hari-ini">HARI INI</span>
+            <span class="day-title">SABTU</span>
+            <div class="name-slot">Nama Siswa 1</div>
+            <div class="name-slot">Nama Siswa 2</div>
+            <div class="name-slot">Nama Siswa 3</div>
+            <div class="name-slot">Nama Siswa 4</div>
+            <div class="name-slot">Nama Siswa 5</div>
+            <div class="name-slot">Nama Siswa 6</div>
+            <div class="name-slot">Nama Siswa 7</div>
+        </div>
     </div>
 
-    <br>
-    <a href="https://i.pinimg.com/originals/9d/82/4e/9d824e606b3b743a8b0a6a4718ea622e.jpg?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnvYmNAV4hCTW4y-PEf7ua_f-KGKq266s08DQ_wKv6eYoziJGkj3qGCOv8MoQ_aem__QjiV7-GKx3QuKraOAHiLw" class="footer-link">✨ PIKET SELESAI! ✨</a>
+    <a href="https://i.pinimg.com/originals/9d/82/4e/9d824e606b3b743a8b0a6a4718ea622e.jpg?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnvYmNAV4hCTW4y-PEf7ua_f-KGKq266s08DQ_wKv6eYoziJGkj3qGCOv8MoQ_aem__QjiV7-GKx3QuKraOAHiLw" class="footer-link">✨ PIKET SELESAI! ✨
+    </a>
 
     <script>
         function updateWeb() {
@@ -171,7 +222,7 @@
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('clockText').innerText = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clockText').innerText = hours + ":" + minutes + ":" + seconds;
 
             const options = { weekday: 'long', day: 'numeric', month: 'long' };
             document.getElementById('dateText').innerText = now.toLocaleDateString('id-ID', options);
